@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="theme.css" />
+    <script src="script.js" defer></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elderly Digital Help</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Garamond&display=swap');
+
+        html {
+            transform: scale(1.3);
+            transform-origin: top left;
+            width: 71.43%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        body {
+            font-family: 'Garamond', serif;
+            margin: 0;
+            background: #f8f8f8;
+            color: #1d121d;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 300px;
+            height: 620px;
+            background: #fff;
+            border-radius: 24px;
+            margin-top: 40px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo {
+            font-size: 12px;
+            color: #c9c9c9;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin: 20px 20px 6px 20px;
+        }
+
+        .menu-icon {
+            font-weight: 900;
+            font-size: 22px;
+            margin: 0 20px 12px 20px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        h2 {
+            font-weight: 600;
+            font-size: 28px;
+            margin: 0 20px 8px 20px;
+        }
+
+        .coffee-icon {
+            position: absolute;
+            top: 48px;
+            right: 24px;
+            font-size: 18px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin: 0 20px 18px 20px;
+        }
+
+        .icons-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 20px 28px 20px;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 56px;
+            cursor: pointer;
+        }
+
+        .icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            margin-bottom: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .icon img {
+                width: 70%;
+                height: 70%;
+                object-fit: contain;
+            }
+
+        .qr {
+            background: #d84cc3;
+        }
+
+        .digital {
+            background: #4c72d8;
+        }
+
+        .fake-news {
+            background: #f59f4c;
+        }
+
+        .ewallets {
+            background: #77c4c4;
+        }
+
+        .icon-label {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1d121d;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 20px 12px 20px;
+        }
+
+        .scrollable-content {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            padding: 0 20px 0 20px;
+        }
+
+        .card {
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-bottom: 18px;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        .social-card {
+            background: #f5d7eb;
+            color: #3d141c;
+        }
+
+        .join-now {
+            font-weight: 700;
+            font-size: 15px;
+            color: #c5398d;
+            cursor: pointer;
+            margin-top: 14px;
+        }
+
+        .sports-card {
+            background: #fce4d4;
+            color: #5a3310;
+        }
+
+        .time {
+            color: #e0913c;
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        .bottom-bar {
+            position: sticky;
+            bottom: 0;
+            background: #fff;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #f1f1f1;
+            padding: 10px 0;
+            z-index: 10;
+            border-radius: 0 0 24px 24px;
+        }
+
+        .bottom-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+            .bottom-icon.home svg {
+                stroke: #1d121d;
+            }
+
+            .bottom-icon.settings svg {
+                stroke: #999;
+            }
+
+            .bottom-icon:hover svg {
+                stroke: #c5398d;
+            }
+
+        /* Accessibility Classes */
+        .dark-mode {
+            background-color: #121212 !important;
+            color: white !important;
+        }
+
+        .high-contrast {
+            filter: contrast(1.5);
+        }
+
+        .font-small {
+            font-size: 10px;
+        }
+
+        .font-medium {
+            font-size: 20px;
+        }
+
+        .font-large {
+            font-size: 30px;
+        }
+
+        body.font-small .container {
+            transform: scale(0.9);
+            transform-origin: top;
+        }
+
+        body.font-medium .container {
+            transform: scale(1);
+            transform-origin: top;
+        }
+
+        body.font-large .container {
+            transform: scale(1.2);
+            transform-origin: top;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" role="main" aria-label="App interface">
+        <div class="logo" aria-label="Home logo text"></div>
+        <div class="logo" aria-label="Home logo text"></div>
+        <div class="menu-icon" aria-label="Menu button" role="button" tabindex="0" onclick="location.href='topicchoice.html'" onkeypress="if(event.key==='Enter'){location.href='topicchoice.html'}">&#9776;</div>
+
+        <h2>Welcome back</h2>
+        <div class="coffee-icon" aria-label="Coffee cup icon" role="img" tabindex="0">🍵</div>
+        <div class="subtitle">What do you want to learn today?</div>
+
+        <a href="qr.html" style="text-decoration: none;">
+            <div class="icons-row" role="list">
+                <div class="icon-wrapper" role="listitem" aria-label="QR & Links">
+                    <div class="icon qr"><img src="raw picture/qr-code.jpg" alt="Icon" /></div>
+                    <div class="icon-label">QR &amp; Links</div>
+                </div>
+        </a>
+        <a href="digitalscams.html" style="text-decoration: none;">
+            <div class="icon-wrapper" role="listitem" aria-label="Digital Scams">
+                <div class="icon digital"><img src="raw picture/hacker.png" alt="Icon" /></div>
+                <div class="icon-label">Digital Scams</div>
+            </div>
+        </a>
+        <a href="fakenews.html" style="text-decoration: none;">
+            <div class="icon-wrapper" role="listitem" aria-label="Fake News">
+                <div class="icon fake-news"><img src="raw picture/fake.png" alt="Icon" /></div>
+                <div class="icon-label">Fake News</div>
+            </div>
+        </a>
+        <a href="ewallets.html" style="text-decoration: none;">
+            <div class="icon-wrapper" role="listitem" aria-label="E-Wallets">
+                <div class="icon ewallets"><img src="raw picture/ew.png" alt="Icon" /></div>
+                <div class="icon-label">E-Wallets</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="section-title">Today’s News</div>
+
+    <div class="scrollable-content" tabindex="0" aria-label="Scrollable news cards">
+        <div class="card social-card"
+             tabindex="0">
+            <strong>Hot News!</strong><br />
+            Ahli parlimen Raub halang penjawat awam?<br />
+            <div class="join-now" role="button" tabindex="0" href="news.html">See More</div>
+        </div>
+
+        <div class="card social-card" tabindex="0">
+            <strong>Social</strong><br />
+            Threads is the new wave!<br />
+            Check it out
+            <div class="join-now" role="button" tabindex="0">Join Now ▶</div>
+        </div>
+
+        <div class="card sports-card" tabindex="0">
+            <strong>Premiere League</strong><br />
+            Manchester United vs Liverpool today
+            <div class="time">06:00 PM 🕒</div>
+        </div>
+
+        <div class="card sports-card" tabindex="0">
+            <strong>Friendly Match </strong><br />
+            JDT vs Manchester United
+            <div class="time">08:00 PM 🕒</div>
+        </div>
+
+        <div class="card sports-card" tabindex="0">
+            <strong>MPL 2025</strong><br />
+            SRG vs Homebois
+            <div class="time">09:30 PM 🕒</div>
+        </div>
+    </div>
+
+    <div class="bottom-bar" aria-label="Navigation">
+        <a href="home.html" class="bottom-icon home" aria-label="Home" title="Home" role="link">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1d121d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M3 9l9-7 9 7"></path>
+                <path d="M9 22V12H15V22"></path>
+            </svg>
+        </a>
+        <a href="settings.html" class="bottom-icon settings" aria-label="Settings" title="Settings" role="link">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+        </a>
+    </div>
+</body>
+</html>
